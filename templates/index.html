@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartHire AI</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <button
+        id="themeBtn"
+        onclick="toggleTheme()"
+   >
+        Toggle Theme
+    </button>
+
+    <div class="container">
+
+        <h1>SmartHire AI</h1>
+
+        <button onclick="toggleTheme()" class="theme-btn">
+            Toggle Theme
+        </button>
+
+        <p class="subtitle">
+            AI Resume Analyzer & ATS Checker
+        </p>
+
+        <div class="card">
+
+            <div class="drop-zone" id="dropZone">
+
+                <p>Drag & Drop Resume Here</p>
+
+                <input type="file" id="resume" hidden>
+
+                <button type="button" id="selectBtn">
+                   Select Resume File
+                </button>
+
+                <p id="fileName"></p>
+
+            </div>
+
+            <textarea
+                id="jobDescription"
+                placeholder="Paste Job Description Here..."
+            ></textarea>
+
+            <button onclick="analyzeResume()">
+                Analyze Resume
+            </button>
+
+            <div class="progress-container">
+
+                <div
+                    id="progressBar"
+                    class="progress-bar">
+                </div>
+
+            </div>
+
+            <button onclick="downloadReport()">
+                Download Report
+            </button>
+
+            <div id="result"></div>
+
+        </div>
+
+        <div id="result" class="result"></div>
+
+        <div class="chart-container">
+            <canvas id="atsChart"></canvas>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/chart.js"></script>
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>
